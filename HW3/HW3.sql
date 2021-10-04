@@ -56,3 +56,4 @@ select phase_of_flight, round(avg(cost)) as average from birdstrikes group by ph
 select state, avg(speed) as average_speed from birdstrikes group by state having length(state) <5 order by average_speed desc limit 1;
 -- Iowa
 
+
