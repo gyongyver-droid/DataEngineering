@@ -1,0 +1,67 @@
+{
+    "university":{
+       "program": [
+           {"students":[
+               {"student":[
+                   {"name":"Student1"},
+                   {"id":123222},
+                   {"courses":[
+                       {"course1":
+                           {"grade":5,
+                           "teacher1":"Prof1",
+                           "teacher2":"Prof2"}
+                       },
+                        {"course2":
+                            {"grade":5,
+                            "teacher":"Prof3"}
+                        }
+                   ]}
+               ]},
+               {"student":[
+                   {"name":"Student2"},
+                   {"id":322113},
+                   {"courses":[
+                       {"course3":[
+                        {"grade":5},
+                        {"teacher1":"Prof4"}
+                       ]}
+                   ]}
+               ]}
+           ] },
+
+           { "faculty": [
+               {"head":
+                   {"name":"Prof1",
+                   "id":3323,
+                   "courses":[
+                       "course1", "course5"
+                   ]},
+                   "students":["student1", "student5"] },
+
+               {"professors":[
+                   {"name":"Prof2",
+                    "id":"3454",
+                    "course1":"Course1",
+                    "course2":"Course2"},
+                    {"name":"Prof3",
+                        "id":"8895",
+                        "course1":"Course1"}
+               ]}
+           ]},
+           {"administration":[
+               {"name":"Coordinator1",
+                "id":122,
+                "task1":"XXX",
+                "task2":"YYY",
+                "boss":"director1"},
+                {"name":"Coordinator2",
+                    "id":222,
+                    "task1":"ABC",
+                    "task2":"YYY",
+                    "boss":"director1"}
+           ]}
+               
+        ]
+
+    }
+}
