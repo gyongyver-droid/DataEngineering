@@ -9,7 +9,7 @@ In the project I plan to analyze an IMDB relational dataset containing movies, g
  - 1. Load, understand nad descibe the data, do some data cleaning if needed
  - 2. Plan the analytical layer
  - 3. Write ETL pipeline (as stored procedure) to create the analytical data layer
- - 4. Create event, trigger and test
+ - 4. Create (event), trigger and test
  - 5. Write ETL pipeline to create data marts
  
  Illustration:
@@ -40,17 +40,18 @@ The database contains 7 tables:
 This is my operational data layer. As an operational layer it is process oriented. 
 
 ### Analytical questions 
-What are the 5  highest rated movies, there director and actors?
-How many male and female actors are in the 3 highest rated movies?
+- What are the 5  highest rated movies, there director and actors?
+- How many male and female actors are in the 3 highest rated movies?
  
-Which director has the most movies and what are there ranks?
+- Which director has the most movies and what are there ranks?
 
-In 2000 
+- How many movies were created and what are their average ratings in 1980, 1990 and 2000?
 
 ### Analytical layer
 
 #### Dimensions
 #### Transformations
+#### Illustration
 
 
 ![image](https://user-images.githubusercontent.com/57848147/139247143-2f287a2b-812f-4803-857e-6ac7430608d5.png)
