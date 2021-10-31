@@ -27,13 +27,33 @@ https://relational.fit.cvut.cz/dataset/IMDb
 
 
 The database contains 7 tables:
-- actors ( + film count)
+- actors
+
+ The actors table contains the actors' id, their first name and last name, their gender and fiml count they played in. There are 1907 actors in the tabe.
+ 
 - roles
+
+ The roles table consists of the the role  itself, the actor  id and the movie id in which the role was played. There are 1989 roles in the table
+ 
 - movies
+
+  The movies table had the movies' id, name, the year it was published and the IMDB rank. The IMDB rank is and integer that ranges from 0 to 10. There are 36 movies in the table.
+  
 - movies_genres
+
+ The movies_genres table show the movie's genre for ecery movie id. It important to note that a movie can have multiple genres. There are 16 different genres in the table.
+ 
 - movies_directors
+
+  The movies_directors table contains the movie ids and directors ids. Similarly to genres, a movie may have multiple directos. 
+  
 - directors
+
+  The directors table is composed of the director id, first name and last name. There are 34 directors in the table.
+  
 - directors_genres
+
+ The directors_genres table has director id, the genres connected to him/her and probability. 
 
 ### Operational data layer
 
@@ -55,11 +75,14 @@ This is my operational data layer. As an operational layer it is process oriente
 ### Analytical layer
 
 #### Dimensions
+
 #### Transformations
+
 #### Illustration
 
+![Table](https://user-images.githubusercontent.com/57848147/139598391-0d7b53d1-e7e1-4673-b35c-35c9c72545d3.png)
 
-![image](https://user-images.githubusercontent.com/57848147/139247143-2f287a2b-812f-4803-857e-6ac7430608d5.png)
+
 
 
 
