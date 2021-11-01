@@ -1,7 +1,7 @@
 # DE1 Term1 Project Documentation
 
 ### Project interpretation
-In the project I plan to analyze an IMDB relational dataset containing movies, genres, directors, actors and roles. The data source was available as an SQL file which serve as my operational data layer. Then I created an ETL pipeline to build my an anylytical layer. 
+In the project I plan to analyze an IMDB relational dataset containing movies, genres, directors, actors and roles. The data source was available as an SQL file which serve as my operational data layer. Then I created an ETL pipeline to build my an analytical layer. 
 
 
 ### Analytics plan
@@ -82,6 +82,7 @@ I define some questions which I want to answer with data marts as the output of 
 The layer stores the data as a warehouse. The date is extracted from the operational laer, transformed in the necessary cases and loaded into this layes by a stored procedure. 
 ##### Event & trigger
 I also created an event, which can be scheduled and calls the mentioned stored procedure to build the analytical layer.
+Furthermore, I implemented a trigger, which inserts the relevant new rows into the analytical layer when there is a new role inserted into the role table. However, the trigger is not tested properly due to errors in insereting into the roles table. 
 
 #### Dimensions
 
