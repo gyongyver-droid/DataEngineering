@@ -14,7 +14,8 @@ In the project I plan to analyze an IMDB relational dataset containing movies, g
  
  Illustration:
  
- 
+ ![Analytics plan](https://user-images.githubusercontent.com/57848147/139607533-d0c4edb3-901c-4766-8242-118a2f08d264.png)
+
  
 
 ### Data Source and overview
