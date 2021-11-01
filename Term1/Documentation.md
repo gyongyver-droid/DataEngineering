@@ -1,16 +1,17 @@
 # DE1 Term1 Project Documentation
 
 ### Project interpretation
-In the project I plan to analyze an IMDB relational dataset containing movies, genres, directors, actors and roles. 
+In the project I plan to analyze an IMDB relational dataset containing movies, genres, directors, actors and roles. The data source was available as an SQL file which serve as my operational data layer. Then I created an ETL pipeline to build my an anylytical layer. 
 
 
 ### Analytics plan
 
- - 1. Load, understand nad descibe the data, do some data cleaning if needed
+ - 1. Load, understand and descibe the data
  - 2. Plan the analytical layer
  - 3. Write ETL pipeline (as stored procedure) to create the analytical data layer
  - 4. Create event / trigger and test
- - 5. Write ETL pipeline to create data marts
+ - 5. Ask question that interests as an analyst
+ - 6. Write ETL pipeline to create data marts
  
  Illustration:
  
@@ -24,8 +25,7 @@ IMDB dataset
 https://relational.fit.cvut.cz/dataset/IMDb
 
 
-![image](https://user-images.githubusercontent.com/57848147/139240147-91ca1605-c798-4933-9bb0-ab9896ecd1cd.png)
-
+![bitmap](https://user-images.githubusercontent.com/57848147/139670978-254f49ab-9ed7-413e-b896-24b48ca422f3.png)
 
 The database contains 7 tables:
 - actors
@@ -55,6 +55,8 @@ The database contains 7 tables:
 - directors_genres
 
  The directors_genres table has director id, the genres connected to him/her and probability. 
+ 
+ Originally, the file ocntained a table called **actors2** which did no contain anything, so I dropped that table.
 
 ### Operational data layer
 
@@ -75,16 +77,27 @@ This is my operational data layer. As an operational layer it is process oriente
 
 ### Analytical layer
 
+The stores the data as a warehouse and 
+
 #### Dimensions
+
+My analytical layer has 4 dimensions: 
+ 1) actors: id, first and last name connected, gender, film count
+ 2) roles: role
+ 3) movies: movie name, year, rating
+ 4) directors: first and last name connected
+
+All dimensions have more attributes whixh are included in the analytical layer. The one mive attribute I left out was the genre variable, because I found it unnecessary for my analysis. If an analysit is interested in genres it can be inlcuded in the layer or an other analytical layer can be built. 
+
 
 #### Transformations
 
+I performed 2 trnasformation in the ETL pipeline, both are connected to names. Firstly I conjoined the first and last name of the actors, secondly I did the same with the directors name. All of the orher variables are best described as they are so I did not see any other useful transformation.
+
 #### Illustration
+PLease see my analytical layer here:
 
 ![Table](https://user-images.githubusercontent.com/57848147/139598391-0d7b53d1-e7e1-4673-b35c-35c9c72545d3.png)
-
-
-
 
 
 ## Data marts 
