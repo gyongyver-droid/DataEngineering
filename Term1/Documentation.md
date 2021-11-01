@@ -21,7 +21,7 @@ In the project I plan to analyze an IMDB relational dataset containing movies, g
 
 ### Data Source and overview
 
-IMDB dataset
+My data is an IMDB dataset from
 https://relational.fit.cvut.cz/dataset/IMDb
 
 
@@ -58,18 +58,20 @@ The database contains 7 tables:
  
  Originally, the file ocntained a table called **actors2** which did no contain anything, so I dropped that table.
 
-### Operational data layer
+#### Operational data layer
 
-This is my operational data layer. As an operational layer it is process oriented. 
+So finally, this 7 relational data tables serve as my operational layer. THis layer is porcess oriented, it is easy to add actors, movies roles and so on. 
 
 ### Analytical questions 
+I define some questions which I want to answer with data marts as the output of the project. THese questions help me select the relevant dimensions and build the analytical layer.
+
 - What are the 5  highest rated movies, who is the director?
  
-- How many male and female actors are in the 3 highest rated movies?
+- How many male and female actors are in the different movies?
  
 - Which director has the most movies and what are there average ratings?
 
-- Which 5 movies has the worst rating in 2000?
+- Which movies has the worst rating in 2000?
 
 - Which actors appeared in the most movies and what are the average rating?
 
@@ -77,7 +79,9 @@ This is my operational data layer. As an operational layer it is process oriente
 
 ### Analytical layer
 
-The stores the data as a warehouse and 
+The layer stores the data as a warehouse. The date is extracted from the operational laer, transformed in the necessary cases and loaded into this layes by a stored procedure. 
+##### Event & trigger
+I also created an event, which can be scheduled and calls the mentioned stored procedure to build the analytical layer.
 
 #### Dimensions
 
@@ -101,3 +105,13 @@ PLease see my analytical layer here:
 
 
 ## Data marts 
+
+I created a stored procedure which uilds 6 data marts. These 6 data marts are views, that answer the questions I defined above:
+
+1) *Top_movies* view answers what are the 5  highest rated movies and who is the director
+2) *Director_rating* view answers Which director hAS the most movies and what are there average ratings
+3) *Actor_avg_rating* view answers Which actors appeared in the most movies and what are the average rating
+4) *Bottom_in_2000* view answers which movies has the worst ratings in 2000
+5) *Yearly_avg_rating* view answers How many movies were CREATEd and what are their average ratings in the different years
+6) *Gender_number* view answers How many male and female actors are in the different movies?
+
